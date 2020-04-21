@@ -3,14 +3,14 @@ create table users (
     first_name varchar,
     last_name varchar,
     email varchar,
-    password varchar,
-    admin varchar,
+    user_password varchar,
+    is_admin varchar,
     contact_me varchar
 )
 
 create table companies (
     id serial primary key,
-    name varchar
+    company_name varchar
 )
 
 create table applications (
@@ -19,9 +19,10 @@ create table applications (
     company_id integer references companies(id),
     city varchar,
     position varchar,
+    position_description varchar,
     application_date date,
     offer_extended varchar,
-    make_public int
+    make_public varchar
 )
 
 create table interviews (
@@ -30,9 +31,13 @@ create table interviews (
     application_id integer references applications(id),
     company_id integer references companies(id),
     round varchar,
-    type varchar,
+    interview_type varchar,
     interview_date date,
-    interview rating varchar,
+    interview_rating varchar,
+    interviewer varchar,
+    follow_up_person varchar,
+    follow_up_phone varchar,
+    follow_up_email varchar,
     whiteboarding varchar,
     comments varchar
 )
