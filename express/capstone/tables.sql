@@ -19,9 +19,10 @@ create table applications (
     company_id integer references companies(id),
     city varchar,
     position varchar,
+    position_description varchar,
     application_date date,
     offer_extended varchar,
-    make_public int
+    make_public varchar
 )
 
 create table interviews (
@@ -33,6 +34,10 @@ create table interviews (
     interview_type varchar,
     interview_date date,
     interview_rating varchar,
+    interviewer varchar,
+    follow_up_person varchar,
+    follow_up_phone varchar,
+    follow_up_email varchar,
     whiteboarding varchar,
     comments varchar
 )
