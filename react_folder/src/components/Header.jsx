@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React from "./node_modules/react";
+import { Link } from "./node_modules/react-router-dom";
 
 function Header() {
   const handleClick = (e) => {
