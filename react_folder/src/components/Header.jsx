@@ -1,30 +1,30 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import AppTrack from "../images/AppTrack.png";
-import { useHistory } from "react-router-dom";
 
-class Header extends Component {
-  render() {
-    return (
-      <header style={headerStyle}>
-        <div>
-          <div style={h1Style}>App Track</div>
-          <div style={buttons}>
-            <button
-              style={login}
-              onClick="window.location.href='http://localhost:3000/login'"
-              type="submit"
-            >
-              Login
-            </button>
-            <button style={signUp} type="submit">
-              Sign Up for Free
-            </button>
-          </div>
+function Header() {
+  const handleClick = (e) => {
+    e.preventDefault();
+    window.location.href = "http://localhost:3000/login";
+  };
+  const handleClick2 = (e) => {
+    e.preventDefault();
+    window.location.href = "https://localhost:3000/signup";
+  };
+
+  return (
+    <header style={headerStyle}>
+      <div>
+        <div style={h1Style}>App Track</div>
+        <div style={buttons}>
+          <button style={login} onClick={handleClick} type="submit">
+            Login
+          </button>
+          <button style={signUp} onClick={handleClick2} type="submit">
+            Sign Up for Free
+          </button>
         </div>
-      </header>
-    );
-  }
+      </div>
+    </header>
+  );
 }
 
 const headerStyle = {
