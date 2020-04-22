@@ -1,12 +1,20 @@
-import React from 'react';
-import Signup from './Components/Signup';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Intro from "./components/Intro";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <Signup />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Route exact path="/">
+          <Intro />
+        </Route>
+      </div>
+    </Router>
   );
 }
 
