@@ -1,19 +1,30 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import AppTrack from "../images/AppTrack.png";
+import { useHistory } from "react-router-dom";
 
-function Header() {
-  return (
-    <header style={headerStyle}>
-      <div>
-        <div style={h1Style}>App Track</div>
-        <div style={buttons}>
-          <button style={login}>Login</button>
-          <button style={signUp}>Sign Up for Free</button>
+class Header extends Component {
+  render() {
+    return (
+      <header style={headerStyle}>
+        <div>
+          <div style={h1Style}>App Track</div>
+          <div style={buttons}>
+            <button
+              style={login}
+              onClick="window.location.href='http://localhost:3000/login'"
+              type="submit"
+            >
+              Login
+            </button>
+            <button style={signUp} type="submit">
+              Sign Up for Free
+            </button>
+          </div>
         </div>
-      </div>
-    </header>
-  );
+      </header>
+    );
+  }
 }
 
 const headerStyle = {
